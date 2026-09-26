@@ -34,6 +34,7 @@ This project is intentionally understandable and runnable without an API key or 
 ### How to try it
 
 ```bash
+git clone https://github.com/Asresh/project-01-signaldesk.git
 cd project-01-signaldesk
 python3 -m signaldesk
 ```
@@ -48,7 +49,7 @@ Then open <http://127.0.0.1:8000>. The demo uses invented example data and store
 | Build with customer data and existing systems | CSV adapters and a normalized incident/service model |
 | Ship useful production-shaped software | HTTP API, simple operator UI, Dockerfile, and health endpoint |
 | Use AI carefully in a real workflow | Explainable retrieval/ranking, confidence thresholds, and approval boundary |
-| Measure quality and iterate | Golden test scenarios, safety checks, latency measurements, and known limits |
+| Measure quality and iterate | Golden test scenarios, safety checks, and explicit known limits |
 | Explain clearly to technical and non-technical people | Diagrams, plain-language README, operator guide, and final report |
 
 See the [project research notes](https://github.com/Asresh/project-01-signaldesk/blob/main/docs/research.md) for the posting sample, salary context, source links, and the skill synthesis behind the design.
@@ -61,3 +62,4 @@ See the [project research notes](https://github.com/Asresh/project-01-signaldesk
 ---
 
 *Portfolio label: FDE Projects · Project 01 is an educational prototype, not a production incident-management system.*
+
