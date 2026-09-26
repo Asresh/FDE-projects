@@ -1,0 +1,4 @@
+service_id,name,owner_team,tier,dashboard_url
+payments-api,Payments API,Commerce Platform,Tier 1,https://example.invalid/dashboards/payments
+search-indexer,Search Indexer,Catalog Systems,Tier 2,https://example.invalid/dashboards/search
+identity-gateway,Identity Gateway,Identity Platform,Tier 1,https://example.invalid/dashboards/identity

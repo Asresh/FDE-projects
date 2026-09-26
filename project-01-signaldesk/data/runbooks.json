@@ -1,0 +1,5 @@
+[
+  {"runbook_id":"RB-017","title":"Database connection pool saturation","summary":"Check pool usage and recent connection configuration changes; compare active and idle connections before changing limits.","symptoms":["database connection pool timeout","connection saturation","checkout latency"],"tags":["database","connection","pool","timeout","latency"],"url":"docs/runbooks/database-pool.md"},
+  {"runbook_id":"RB-023","title":"Search indexing backlog","summary":"Inspect queue depth, worker health, and the last successful index checkpoint before replaying jobs.","symptoms":["indexing lag","queue backlog","search freshness"],"tags":["indexer","queue","backlog","search","lag"],"url":"docs/runbooks/search-backlog.md"},
+  {"runbook_id":"RB-031","title":"Regional authentication upstream errors","summary":"Compare regional error rate and upstream health; check recent routing policy changes before failover.","symptoms":["login failures","authentication upstream errors","eu-west"],"tags":["login","authentication","upstream","errors","region"],"url":"docs/runbooks/auth-upstream.md"}
+]

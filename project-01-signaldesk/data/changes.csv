@@ -1,0 +1,4 @@
+change_id,service_id,changed_at,summary
+CHG-882,payments-api,2026-09-25T01:55:00Z,Connection pool limit lowered during configuration rollout
+CHG-881,search-indexer,2026-09-25T01:05:00Z,Indexer worker image updated
+CHG-880,identity-gateway,2026-09-25T00:52:00Z,EU upstream routing policy updated

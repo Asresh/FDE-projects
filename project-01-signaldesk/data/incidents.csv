@@ -1,0 +1,4 @@
+incident_id,service_id,title,severity,status,created_at,description,symptoms
+INC-1042,payments-api,Database connection pool exhausted,P1,investigating,2026-09-25T02:14:00Z,"Checkout requests are timing out and database connections are saturated.","database connection pool timeout latency checkout"
+INC-1041,search-indexer,Search indexing lag above threshold,P2,investigating,2026-09-25T01:48:00Z,"New catalog items are taking over 20 minutes to appear in search.","indexing lag queue backlog search freshness"
+INC-1040,identity-gateway,Elevated login failures in EU region,P2,monitoring,2026-09-25T01:20:00Z,"Login requests in eu-west are returning intermittent upstream errors.","login authentication upstream errors eu-west"
