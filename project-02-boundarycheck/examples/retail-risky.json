@@ -1,0 +1,19 @@
+{
+  "customer": {"name": "Juniper Retail (fictional)", "environment": "pilot", "service": "returns assistant"},
+  "deployment": {
+    "identity": {"authentication": "none", "tenant_isolation": "shared"},
+    "network": {"egress_allowlist": ["*"]},
+    "logging": {"capture_prompt_text": true, "redact_sensitive_fields": false},
+    "controls": {
+      "fail_closed": false,
+      "secret_source": "config_file",
+      "tls_enforced": false,
+      "audit_events": false,
+      "rollback_documented": false
+    },
+    "tools": [
+      {"name": "issue_refund", "access": "write", "scope": "all_tenants", "approval_required": false}
+    ]
+  },
+  "evaluation": {"golden_cases": 0, "minimum_pass_rate": 0.0}
+}

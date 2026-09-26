@@ -1,0 +1,138 @@
+{
+  "customer": "Juniper Retail (fictional)",
+  "disclaimer": "Advisory profile review only. This result is not a live-system scan, audit, or security certification.",
+  "environment": "pilot",
+  "finding_count": 14,
+  "findings": [
+    {
+      "code": "BC007",
+      "evidence": "'all_tenants'",
+      "explanation": "Tool 'issue_refund' is configured to reach more than the requesting customer's data.",
+      "path": "deployment.tools[0].scope",
+      "recommendation": "Restrict the tool to the authenticated customer's records and add cross-tenant denial tests.",
+      "severity": "CRITICAL",
+      "title": "A tool can act across customer boundaries"
+    },
+    {
+      "code": "BC008",
+      "evidence": "False",
+      "explanation": "If identity, policy, or a dependency check fails, the system could continue without its guardrail.",
+      "path": "deployment.controls.fail_closed",
+      "recommendation": "Fail closed for authorization and policy checks; define a safe fallback for unavailable dependencies.",
+      "severity": "CRITICAL",
+      "title": "A control may fail open"
+    },
+    {
+      "code": "BC001",
+      "evidence": "'none'",
+      "explanation": "The profile does not identify a supported sign-in boundary.",
+      "path": "deployment.identity.authentication",
+      "recommendation": "Choose the customer's approved OIDC, SAML, or mutual-TLS pattern and verify its configuration.",
+      "severity": "HIGH",
+      "title": "Enterprise authentication is not specified"
+    },
+    {
+      "code": "BC002",
+      "evidence": "'shared'",
+      "explanation": "A shared or unspecified boundary can expose one customer's records to another.",
+      "path": "deployment.identity.tenant_isolation",
+      "recommendation": "Enforce and test a per-customer data boundary at the identity, query, and storage layers.",
+      "severity": "HIGH",
+      "title": "Customer data isolation is unclear"
+    },
+    {
+      "code": "BC003",
+      "evidence": "True",
+      "explanation": "Prompts can contain personal, confidential, or customer-provided information.",
+      "path": "deployment.logging.capture_prompt_text",
+      "recommendation": "Disable prompt-body logging by default; record metadata or an approved, time-limited sample instead.",
+      "severity": "HIGH",
+      "title": "Prompt text is retained in logs"
+    },
+    {
+      "code": "BC005",
+      "evidence": "['*']",
+      "explanation": "A wildcard destination lets a compromised component contact arbitrary hosts.",
+      "path": "deployment.network.egress_allowlist",
+      "recommendation": "Replace wildcards with the minimum named services the deployment needs; log and review denied egress.",
+      "severity": "HIGH",
+      "title": "Outbound network access is unrestricted"
+    },
+    {
+      "code": "BC006",
+      "evidence": "False",
+      "explanation": "Tool 'issue_refund' can change customer data without an explicit human decision.",
+      "path": "deployment.tools[0].approval_required",
+      "recommendation": "Require approval before consequential writes; make the approved action and actor auditable.",
+      "severity": "HIGH",
+      "title": "A write-capable tool has no approval gate"
+    },
+    {
+      "code": "BC009",
+      "evidence": "'config_file'",
+      "explanation": "A profile without an explicit managed source can lead to credentials being copied into config or images.",
+      "path": "deployment.controls.secret_source",
+      "recommendation": "Use a customer-approved secret manager, workload identity, or environment reference; never commit secret values.",
+      "severity": "HIGH",
+      "title": "Secret handling is not tied to a managed source"
+    },
+    {
+      "code": "BC010",
+      "evidence": "False",
+      "explanation": "Without an explicit transport-encryption setting, service-to-service traffic may be exposed.",
+      "path": "deployment.controls.tls_enforced",
+      "recommendation": "Require TLS for customer and internal service traffic and verify certificate validation is enabled.",
+      "severity": "HIGH",
+      "title": "Transport encryption is not confirmed"
+    },
+    {
+      "code": "BC004",
+      "evidence": "False",
+      "explanation": "Support and telemetry logs can accidentally become a second store of sensitive data.",
+      "path": "deployment.logging.redact_sensitive_fields",
+      "recommendation": "Redact customer identifiers and sensitive fields before data reaches logs or traces.",
+      "severity": "MEDIUM",
+      "title": "Sensitive fields are not marked for redaction"
+    },
+    {
+      "code": "BC011",
+      "evidence": "False",
+      "explanation": "The team may not be able to reconstruct who invoked a tool or changed a policy.",
+      "path": "deployment.controls.audit_events",
+      "recommendation": "Record actor, action, timestamp, target, and outcome without storing prompt or secret contents.",
+      "severity": "MEDIUM",
+      "title": "Security-relevant actions are not audited"
+    },
+    {
+      "code": "BC012",
+      "evidence": "0",
+      "explanation": "There is no stated regression set to check customer-specific behavior before rollout.",
+      "path": "evaluation.golden_cases",
+      "recommendation": "Add representative success, refusal, boundary, and failure cases from the agreed workflow.",
+      "severity": "MEDIUM",
+      "title": "No repeatable evaluation cases are declared"
+    },
+    {
+      "code": "BC013",
+      "evidence": "0.0",
+      "explanation": "Without a pass bar, the team cannot make a consistent launch decision from evaluation results.",
+      "path": "evaluation.minimum_pass_rate",
+      "recommendation": "Set a customer-approved pass rate between 0 and 1 and define which failures block release.",
+      "severity": "MEDIUM",
+      "title": "An acceptance threshold is missing or invalid"
+    },
+    {
+      "code": "BC014",
+      "evidence": "False",
+      "explanation": "A team needs a known way to pause or revert a deployment if quality or safety falls.",
+      "path": "deployment.controls.rollback_documented",
+      "recommendation": "Document who can pause rollout, how to restore the last known-good version, and how users are informed.",
+      "severity": "MEDIUM",
+      "title": "A rollback path is not confirmed"
+    }
+  ],
+  "schema_version": "1.0",
+  "score": 0,
+  "service": "returns assistant",
+  "status": "BLOCKED"
+}

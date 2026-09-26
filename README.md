@@ -4,6 +4,7 @@
 
 <p align="center">
   <img alt="Project 01 · SignalDesk" src="https://img.shields.io/badge/Project%2001-SignalDesk-176B87?style=for-the-badge" />
+  <img alt="Project 02 · BoundaryCheck" src="https://img.shields.io/badge/Project%2002-BoundaryCheck-7654B5?style=for-the-badge" />
   <img alt="Python" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img alt="Tests" src="https://img.shields.io/badge/tests-stdlib%20unittest-2E8B57?style=for-the-badge" />
 </p>
@@ -15,6 +16,8 @@ flowchart LR
   A[Customer problem]:::blue --> B[Project spec]:::purple --> C[Working demo]:::teal --> D[Measured tests]:::green --> E[Submission report]:::orange
   P1[01 · SignalDesk
   Incident triage copilot]:::navy --> C
+  P2[02 · BoundaryCheck
+  AI deployment readiness]:::purple --> C
   classDef blue fill:#DFF3FF,stroke:#2384A6,color:#123B50,stroke-width:2px
   classDef purple fill:#EFE5FF,stroke:#8056C8,color:#33204F,stroke-width:2px
   classDef teal fill:#D7F5EF,stroke:#168C79,color:#12483F,stroke-width:2px
@@ -54,12 +57,19 @@ Then open <http://127.0.0.1:8000>. The demo uses invented example data and store
 
 See the [project research notes](./project-01-signaldesk/docs/research.md) for the posting sample, salary context, source links, and the skill synthesis behind the design.
 
+## Project 02 — BoundaryCheck
+
+**A pre-launch safety and security review for customer AI integrations.** Give it a small JSON deployment profile and it returns a clear, evidence-linked report: what looks unsafe, why it matters, and what to change before launch. The scanner is deterministic, local-first, and does not need customer credentials or an AI API key.
+
+**[Open the BoundaryCheck project README](./project-02-boundarycheck/README.md)**
+
+It is grounded in current high-compensation FDE postings that pair customer delivery with secure infrastructure, end-to-end production ownership, measurable adoption, and clear communication. See [BoundaryCheck's job-market research](./project-02-boundarycheck/docs/research.md) for the roles reviewed, compensation as advertised, and the resulting design choices.
+
 ## Roadmap
 
 - [x] Project 01: SignalDesk incident triage demo
-- [ ] Project 02: customer-specific integration case study
+- [x] Project 02: BoundaryCheck AI deployment readiness scanner
 
 ---
 
 *Portfolio label: FDE Projects · Project 01 is an educational prototype, not a production incident-management system.*
-

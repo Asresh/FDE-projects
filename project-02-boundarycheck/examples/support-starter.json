@@ -1,0 +1,20 @@
+{
+  "customer": {"name": "Northstar Support (sample)", "environment": "staging", "service": "help-center assistant"},
+  "deployment": {
+    "identity": {"authentication": "oidc", "tenant_isolation": "per_customer"},
+    "network": {"egress_allowlist": ["api.model-provider.example", "tickets.northstar.example"]},
+    "logging": {"capture_prompt_text": false, "redact_sensitive_fields": true},
+    "controls": {
+      "fail_closed": true,
+      "secret_source": "workload_identity",
+      "tls_enforced": true,
+      "audit_events": true,
+      "rollback_documented": true
+    },
+    "tools": [
+      {"name": "search_own_tickets", "access": "read", "scope": "own_tenant", "approval_required": false},
+      {"name": "draft_reply", "access": "write", "scope": "own_tenant", "approval_required": true}
+    ]
+  },
+  "evaluation": {"golden_cases": 24, "minimum_pass_rate": 0.95}
+}
