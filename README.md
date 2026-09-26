@@ -29,13 +29,13 @@ flowchart LR
 
 This project is intentionally understandable and runnable without an API key or cloud account. It demonstrates an end-to-end deployment mindset: workflow discovery, data normalization, a usable interface, operational boundaries, tests, and a concise outcome report.
 
-**[Open the project: `project-01-signaldesk`](./project-01-signaldesk/)**
+**[Open the SignalDesk project README](./project-01-signaldesk/README.md)**
 
 ### How to try it
 
 ```bash
 git clone https://github.com/Asresh/FDE-projects.git
-cd project-01-signaldesk
+cd FDE-projects/project-01-signaldesk
 python3 -m signaldesk
 ```
 
@@ -62,3 +62,4 @@ See the [project research notes](./project-01-signaldesk/docs/research.md) for t
 ---
 
 *Portfolio label: FDE Projects · Project 01 is an educational prototype, not a production incident-management system.*
+
