@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="530" viewBox="0 0 1120 530" role="img" aria-labelledby="title desc">
+  <title id="title">ColdChain Guard architecture</title>
+  <desc id="desc">Sensor gateway sends readings to an API and policy service, which correlates them with SQLite inventory, creates cases, and stages ticket notifications in a durable outbox.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#49627a"/></marker></defs>
+  <rect width="1120" height="530" rx="20" fill="#f5f8fc"/>
+  <text x="48" y="48" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#17324d">ColdChain Guard · customer deployment view</text>
+  <text x="48" y="78" font-family="Arial,sans-serif" font-size="15" fill="#49627a">Readings are evidence; an authorized operator owns product disposition.</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="48" y="166" width="210" height="112" rx="14" fill="#e3f4ff" stroke="#4b92b5" stroke-width="2"/>
+    <text x="70" y="202" font-size="18" font-weight="700" fill="#17324d">Sensor gateway</text><text x="70" y="230" font-size="14" fill="#38566f">MQTT bridge / JSON export</text><text x="70" y="253" font-size="13" fill="#38566f">event_id · sensor · time · °C</text>
+    <rect x="334" y="145" width="230" height="155" rx="14" fill="#eee8ff" stroke="#8269bb" stroke-width="2"/>
+    <text x="356" y="180" font-size="18" font-weight="700" fill="#352d55">HTTP API + validator</text><text x="356" y="209" font-size="14" fill="#514873">size and schema checks</text><text x="356" y="233" font-size="14" fill="#514873">deduplicate sensor events</text><text x="356" y="265" font-size="13" fill="#514873">/health · /api/telemetry</text>
+    <rect x="642" y="145" width="220" height="155" rx="14" fill="#e7f7f0" stroke="#55a183" stroke-width="2"/>
+    <text x="664" y="180" font-size="18" font-weight="700" fill="#234c3f">Policy + case service</text><text x="664" y="209" font-size="14" fill="#376957">compare per-lot limits</text><text x="664" y="233" font-size="14" fill="#376957">create auditable case</text><text x="664" y="265" font-size="13" fill="#376957">no automatic disposition</text>
+    <rect x="920" y="106" width="160" height="112" rx="14" fill="#fff2d9" stroke="#d29a3f" stroke-width="2"/>
+    <text x="940" y="142" font-size="17" font-weight="700" fill="#634a20">ERP inventory</text><text x="940" y="170" font-size="14" fill="#765c31">SQLite demo adapter</text><text x="940" y="193" font-size="13" fill="#765c31">lot · location · range</text>
+    <rect x="920" y="272" width="160" height="112" rx="14" fill="#ffe7e4" stroke="#c9786c" stroke-width="2"/>
+    <text x="940" y="308" font-size="17" font-weight="700" fill="#663a35">Ticketing system</text><text x="940" y="336" font-size="14" fill="#80524c">webhook adapter</text><text x="940" y="359" font-size="13" fill="#80524c">idempotency key</text>
+    <rect x="642" y="366" width="220" height="88" rx="14" fill="#e7eef8" stroke="#728eae" stroke-width="2"/>
+    <text x="664" y="402" font-size="18" font-weight="700" fill="#243f5b">SQLite durable store</text><text x="664" y="429" font-size="14" fill="#49627a">readings · cases · outbox</text>
+    <rect x="334" y="366" width="230" height="88" rx="14" fill="#f1f3f6" stroke="#8d9aa7" stroke-width="2"/>
+    <text x="356" y="402" font-size="18" font-weight="700" fill="#34495d">Quality operator</text><text x="356" y="429" font-size="14" fill="#54687a">reviews evidence and lots</text>
+  </g>
+  <g fill="none" stroke="#49627a" stroke-width="2.4" marker-end="url(#arrow)">
+    <path d="M258 220 H334"/><path d="M564 220 H642"/><path d="M920 162 H862"/><path d="M752 300 V366"/><path d="M862 409 H902 Q918 409 918 384 V330"/><path d="M642 409 H564"/>
+  </g>
+  <text x="278" y="206" font-family="Arial,sans-serif" font-size="12" fill="#49627a">POST events</text>
+  <text x="869" y="150" font-family="Arial,sans-serif" font-size="12" fill="#49627a">read lot limits</text>
+  <text x="868" y="396" font-family="Arial,sans-serif" font-size="12" fill="#49627a">outbox POST</text>
+</svg>

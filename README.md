@@ -18,6 +18,8 @@ flowchart LR
   Incident triage copilot]:::navy --> C
   P2[02 · BoundaryCheck
   AI deployment readiness]:::purple --> C
+  P3[03 · ColdChain Guard
+  Cold-chain excursion response]:::teal --> C
   classDef blue fill:#DFF3FF,stroke:#2384A6,color:#123B50,stroke-width:2px
   classDef purple fill:#EFE5FF,stroke:#8056C8,color:#33204F,stroke-width:2px
   classDef teal fill:#D7F5EF,stroke:#168C79,color:#12483F,stroke-width:2px
@@ -65,11 +67,20 @@ See the [project research notes](./project-01-signaldesk/docs/research.md) for t
 
 It is grounded in current high-compensation FDE postings that pair customer delivery with secure infrastructure, end-to-end production ownership, measurable adoption, and clear communication. See [BoundaryCheck's job-market research](./project-02-boundarycheck/docs/research.md) for the roles reviewed, compensation as advertised, and the resulting design choices.
 
+## Project 03 — ColdChain Guard
+
+**A local-first cold-chain exception workflow for food distributors and pharmacy operators.** It consumes temperature readings from a sensor gateway, enriches them with lot and product limits from a SQLite inventory system, opens an auditable excursion case, and stages a notification for a ticketing/webhook system. The demo includes fixture data and a mock outbox mode; no live sensors or credentials are required.
+
+**[Open the ColdChain Guard project README](./project-03-coldchain-guard/README.md)**
+
+The first two projects cover SaaS incident response and AI deployment readiness. This project adds regulated inventory operations, event ingestion, stateful persistence, and an external notification boundary. Its design reflects current hiring signals around customer discovery, integration work, production ownership, safe rollout, and measurable outcomes. See [the job-market research](./project-03-coldchain-guard/docs/job_market_research.md).
+
 ## Roadmap
 
 - [x] Project 01: SignalDesk incident triage demo
 - [x] Project 02: BoundaryCheck AI deployment readiness scanner
+- [x] Project 03: ColdChain Guard cold-chain excursion response
 
 ---
 
-*Portfolio label: FDE Projects · Project 01 is an educational prototype, not a production incident-management system.*
+*Portfolio label: FDE Projects. The repository uses `project-NN` numbering; it contains no `day<number>` folders or `MANIFEST.json`. These are educational prototypes, not production systems.*

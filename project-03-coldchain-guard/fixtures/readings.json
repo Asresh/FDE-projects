@@ -1,0 +1,4 @@
+[
+  {"event_id":"evt-west-001","sensor_id":"sensor-west-1","location_id":"cold-room-west","observed_at":"2026-10-22T08:10:00Z","temperature_c":9.1},
+  {"event_id":"evt-east-001","sensor_id":"sensor-east-1","location_id":"cold-room-east","observed_at":"2026-10-22T08:11:00Z","temperature_c":4.3}
+]

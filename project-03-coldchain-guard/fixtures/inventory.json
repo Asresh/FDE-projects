@@ -1,0 +1,5 @@
+[
+  {"lot_id":"LOT-ICE-2401","product":"Insulin demo pack","location_id":"cold-room-west","min_c":2.0,"max_c":8.0,"quantity":120},
+  {"lot_id":"LOT-ICE-2402","product":"Insulin demo pack","location_id":"cold-room-west","min_c":2.0,"max_c":8.0,"quantity":80},
+  {"lot_id":"LOT-VAX-3301","product":"Vaccine demo pack","location_id":"cold-room-east","min_c":2.0,"max_c":8.0,"quantity":45}
+]
