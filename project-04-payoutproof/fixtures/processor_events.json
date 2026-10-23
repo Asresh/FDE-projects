@@ -1,0 +1,5 @@
+[
+  {"event_id":"evt-po-001","type":"payout.settled","data":{"payout_id":"po-001","amount_cents":9850,"currency":"USD","expected_date":"2026-10-23"}},
+  {"event_id":"evt-po-002","type":"payout.settled","data":{"payout_id":"po-002","amount_cents":24500,"currency":"USD","expected_date":"2026-10-23"}},
+  {"event_id":"evt-po-003","type":"payout.settled","data":{"payout_id":"po-003","amount_cents":14000,"currency":"USD","expected_date":"2026-10-23"}}
+]

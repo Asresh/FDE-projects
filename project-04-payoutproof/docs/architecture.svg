@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="530" viewBox="0 0 1120 530" role="img" aria-labelledby="title desc">
+  <title id="title">PayoutProof architecture</title>
+  <desc id="desc">Processor webhook events and bank CSV rows enter an API, are validated and stored in SQLite, then a reconciliation service compares payout IDs, amounts, and currencies. Differences create review items and finance webhook alerts.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#49627a"/></marker></defs>
+  <rect width="1120" height="530" rx="20" fill="#f5f8fc"/>
+  <text x="46" y="48" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#17324d">PayoutProof · marketplace finance workflow</text>
+  <text x="46" y="78" font-family="Arial,sans-serif" font-size="15" fill="#49627a">All amounts use integer cents. Exceptions go to a human review queue; no money is moved.</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="45" y="145" width="205" height="110" rx="14" fill="#e3f4ff" stroke="#4b92b5" stroke-width="2"/>
+    <text x="65" y="180" font-size="18" font-weight="700" fill="#17324d">Payment processor</text><text x="65" y="208" font-size="14" fill="#38566f">Settlement webhook</text><text x="65" y="232" font-size="13" fill="#38566f">payout ID · net cents · currency</text>
+    <rect x="45" y="293" width="205" height="110" rx="14" fill="#fff2d9" stroke="#d29a3f" stroke-width="2"/>
+    <text x="65" y="328" font-size="18" font-weight="700" fill="#634a20">Bank statement</text><text x="65" y="356" font-size="14" fill="#765c31">CSV import</text><text x="65" y="380" font-size="13" fill="#765c31">payout ref · deposit · amount</text>
+    <rect x="330" y="190" width="205" height="150" rx="14" fill="#eee8ff" stroke="#8269bb" stroke-width="2"/>
+    <text x="350" y="225" font-size="18" font-weight="700" fill="#352d55">API + ingestion</text><text x="350" y="255" font-size="14" fill="#514873">validate and normalize</text><text x="350" y="279" font-size="14" fill="#514873">dedupe source records</text><text x="350" y="311" font-size="13" fill="#514873">/api/processor · /api/bank</text>
+    <rect x="615" y="190" width="205" height="150" rx="14" fill="#e7eef8" stroke="#728eae" stroke-width="2"/>
+    <text x="635" y="225" font-size="18" font-weight="700" fill="#243f5b">SQLite source ledger</text><text x="635" y="255" font-size="14" fill="#49627a">processor payouts</text><text x="635" y="279" font-size="14" fill="#49627a">bank deposits</text><text x="635" y="311" font-size="13" fill="#49627a">reconciliation · outbox</text>
+    <rect x="900" y="128" width="180" height="130" rx="14" fill="#e7f7f0" stroke="#55a183" stroke-width="2"/>
+    <text x="920" y="164" font-size="18" font-weight="700" fill="#234c3f">Reconciliation</text><text x="920" y="192" font-size="14" fill="#376957">match ID + cents +</text><text x="920" y="214" font-size="14" fill="#376957">currency</text><text x="920" y="239" font-size="13" fill="#376957">matched or exception</text>
+    <rect x="900" y="316" width="180" height="115" rx="14" fill="#ffe7e4" stroke="#c9786c" stroke-width="2"/>
+    <text x="920" y="352" font-size="18" font-weight="700" fill="#663a35">Finance reviewer</text><text x="920" y="380" font-size="14" fill="#80524c">evidence-linked items</text><text x="920" y="405" font-size="13" fill="#80524c">webhook or local outbox</text>
+    <rect x="330" y="397" width="490" height="64" rx="14" fill="#f1f3f6" stroke="#8d9aa7" stroke-width="2"/>
+    <text x="350" y="436" font-size="17" font-weight="700" fill="#34495d">GET /api/reconciliations · GET /api/outbox · GET /health</text>
+  </g>
+  <g fill="none" stroke="#49627a" stroke-width="2.4" marker-end="url(#arrow)">
+    <path d="M250 200 H330"/><path d="M250 348 Q290 348 290 300 H330"/><path d="M535 265 H615"/><path d="M820 235 H900"/><path d="M990 258 V316"/><path d="M717 340 V397"/><path d="M535 429 H590"/>
+  </g>
+</svg>

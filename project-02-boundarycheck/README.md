@@ -48,6 +48,18 @@ Open the generated HTML file in a browser. `--fail-on` also gives CI a useful ex
 
 ## 🧭 How it works
 
+The code path is short: the CLI reads a profile, the scanner applies explicit rules, and the report module formats findings. A configured severity threshold becomes a non-zero exit code for CI.
+
+```mermaid
+flowchart LR
+  A[Profile JSON] --> B[boundarycheck/cli.py]
+  B --> C[boundarycheck/scanner.py]
+  C --> D[Findings with JSON paths]
+  D --> E[boundarycheck/report.py]
+  E --> F[Terminal or report file]
+  C --> G[CI threshold exit code]
+```
+
 ```mermaid
 flowchart LR
   A[🧩 Deployment profile<br/>JSON, no secrets]:::blue --> B[🔎 Local rule checks]:::purple

@@ -92,6 +92,18 @@ sequenceDiagram
 
 ## 🧩 What is inside
 
+Follow one request through the code: the server passes an incident to the triage engine, which reads the synthetic service catalog, changes, and runbooks. The browser shows the resulting evidence and records the operator's review.
+
+```mermaid
+flowchart LR
+  A[Browser or API request] --> B[signaldesk/server.py]
+  B --> C[signaldesk/engine.py]
+  C --> D[data CSV files and runbooks.json]
+  C --> E[Evidence-backed triage brief]
+  E --> B --> A
+  A --> F[Human review decision]
+```
+
 ```mermaid
 flowchart TB
   subgraph Inputs[Customer-shaped inputs · all synthetic]

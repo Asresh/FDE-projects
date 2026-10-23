@@ -1,0 +1,4 @@
+payout_ref,bank_ref,amount,currency,booked_at
+po-001,bank-701,98.50,USD,2026-10-23
+po-002,bank-702,240.00,USD,2026-10-23
+po-bank-only,bank-799,50.00,USD,2026-10-23

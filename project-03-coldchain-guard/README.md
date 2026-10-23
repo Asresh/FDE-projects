@@ -6,9 +6,21 @@ ColdChain Guard helps a food or pharmacy distribution team catch a cold-room tem
 
 1. **Sensor gateway adapter** accepts JSON readings like an edge MQTT gateway export.
 2. **Policy and case service** validates the reading, checks product limits, correlates it with inventory lots, and records an excursion case in SQLite.
-3. **Notification outbox** records a webhook-shaped ticket notification with an idempotency key. Demo mode delivers it to a local mock receiver; deployments can configure an outbound webhook.
+3. **Notification outbox** records a webhook-shaped ticket notification with an idempotency key. Demo mode marks it mock-delivered in the local outbox; deployments can configure an outbound webhook.
 
 The system never declares product safe or unsafe for sale. It flags readings for an authorized quality operator and preserves the sensor evidence and lot links. See [`docs/architecture.svg`](docs/architecture.svg) and [`docs/demo_flow.md`](docs/demo_flow.md).
+
+### Follow the code
+
+```mermaid
+flowchart LR
+  A[POST sensor reading] --> B[coldchain/api.py]
+  B --> C[coldchain/service.py<br/>Validate and apply policy]
+  C --> D[coldchain/repository.py<br/>Inventory, readings, cases]
+  C --> E[Webhook notifier]
+  E --> F[Ticket system or local outbox]
+  B --> G[GET health, cases, outbox]
+```
 
 ## Setup
 

@@ -5,7 +5,7 @@
 <p align="center">
   <img alt="Project 01 · SignalDesk" src="https://img.shields.io/badge/Project%2001-SignalDesk-176B87?style=for-the-badge" />
   <img alt="Project 02 · BoundaryCheck" src="https://img.shields.io/badge/Project%2002-BoundaryCheck-7654B5?style=for-the-badge" />
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img alt="Python versions vary by project" src="https://img.shields.io/badge/Python-versions%20by%20project-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img alt="Tests" src="https://img.shields.io/badge/tests-stdlib%20unittest-2E8B57?style=for-the-badge" />
 </p>
 
@@ -20,6 +20,8 @@ flowchart LR
   AI deployment readiness]:::purple --> C
   P3[03 · ColdChain Guard
   Cold-chain excursion response]:::teal --> C
+  P4[04 · PayoutProof
+  Marketplace payout reconciliation]:::orange --> C
   classDef blue fill:#DFF3FF,stroke:#2384A6,color:#123B50,stroke-width:2px
   classDef purple fill:#EFE5FF,stroke:#8056C8,color:#33204F,stroke-width:2px
   classDef teal fill:#D7F5EF,stroke:#168C79,color:#12483F,stroke-width:2px
@@ -75,11 +77,20 @@ It is grounded in current high-compensation FDE postings that pair customer deli
 
 The first two projects cover SaaS incident response and AI deployment readiness. This project adds regulated inventory operations, event ingestion, stateful persistence, and an external notification boundary. Its design reflects current hiring signals around customer discovery, integration work, production ownership, safe rollout, and measurable outcomes. See [the job-market research](./project-03-coldchain-guard/docs/job_market_research.md).
 
+## Project 04 — PayoutProof
+
+**An evidence-first payout reconciliation workflow for online marketplaces.** It combines payment processor settlement events with bank statement rows, reconciles amounts and currencies using integer cents, and creates review items for missing or mismatched deposits. Finance can run the local demo without payment or bank credentials; alert delivery stays in a visible local outbox unless a webhook is configured.
+
+**[Open the PayoutProof project README](./project-04-payoutproof/README.md)**
+
+This adds a finance operations domain and a new integration combination: processor webhooks, bank statement imports, and a finance notification webhook, backed by an auditable source ledger and reconciliation view. See [the job-market research](./project-04-payoutproof/docs/job_market_research.md).
+
 ## Roadmap
 
 - [x] Project 01: SignalDesk incident triage demo
 - [x] Project 02: BoundaryCheck AI deployment readiness scanner
 - [x] Project 03: ColdChain Guard cold-chain excursion response
+- [x] Project 04: PayoutProof marketplace payout reconciliation
 
 ---
 
